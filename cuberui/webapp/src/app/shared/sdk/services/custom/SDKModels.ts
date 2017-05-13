@@ -1,6 +1,8 @@
 /* tslint:disable */
 import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
+import { HumanInteraction } from '../../models/HumanInteraction';
+import { Interaction } from '../../models/Interaction';
 
 export interface Models { [name: string]: any }
 
@@ -9,6 +11,8 @@ export class SDKModels {
 
   private models: Models = {
     User: User,
+    HumanInteraction: HumanInteraction,
+    Interaction: Interaction,
     
   };
 

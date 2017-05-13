@@ -1,0 +1,9 @@
+<div id="AIOuterDiv" class="Inter AI Outer">
+
+  <!-- <div id="AIInnerDiv" class="Inter AI Inner" *ngIf="AIInterRef"> -->
+
+  <ul *ngFor="let _inter of _inters | async">
+    <li>{{_inter.text}}</li>
+  </ul>
+  <!-- </div> -->
+</div>

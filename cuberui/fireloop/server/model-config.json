@@ -34,5 +34,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "HumanInteraction": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Interaction": {
+    "dataSource": "db",
+    "public": true
   }
 }

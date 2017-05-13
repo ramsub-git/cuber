@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { AppComponent } from './app.component';
+import {HumanInteractionComponent} from "./human-interaction.component";
+import {InteractionComponent} from "./interaction.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HumanInteractionComponent,
+    InteractionComponent
   ],
   imports: [
     BrowserModule,
