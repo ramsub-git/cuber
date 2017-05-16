@@ -17,7 +17,7 @@ import {AsyncSubject} from "rxjs/AsyncSubject";
   changeDetection: ChangeDetectionStrategy.Default
 })
 
- @Injectable()
+@Injectable()
 export class InteractionComponent {
   public InterRef: FireLoopRef<Interaction>;
   public interarray: Array<Interaction> = new Array<Interaction>();
@@ -37,6 +37,11 @@ export class InteractionComponent {
 		this.interarray.push(linter);
 	    console.log('leaving inside InterAction Component HumanSaid', message);
 	  });
+	}
 
-  }
+	public ngForCallback() {
+		console.log('inside ngForCallBack - end');
+	}
+
 }
+

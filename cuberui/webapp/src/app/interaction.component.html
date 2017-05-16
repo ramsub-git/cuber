@@ -1,9 +1,14 @@
 <div id="AIOuterDiv" class="Inter AI Outer">
 
-  <!-- <div id="AIInnerDiv" class="Inter AI Inner" *ngIf="AIInterRef"> -->
+  <!-- <div id="AIInnerDiv" class="Inter AI Inner"> -->
 
-  <div *ngFor="let _inter of this.inters | async">
-   <p>{{_inter.text}}</p>
+  <div *ngFor="let _inter of this.inters| async">
+  	<div class="humanSaid">
+   		<p>{{_inter.text}}</p>
+  	</div>
   </div>
   <!-- </div> -->
+
+  <a id='bottom' style='position:absolute;bottom:0;top=0'></a>  
+
 </div>

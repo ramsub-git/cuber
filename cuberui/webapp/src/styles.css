@@ -93,6 +93,9 @@ body {
   background-size:contain;
   /* opacity: 0.05; */
   z-index: 1;
+  overflow-x:hidden;
+  overflow:hidden;
+  overflow-y: hidden;
 }
 
 
@@ -171,6 +174,13 @@ textarea#HumanInter {
   background: lightblue;
 }
 
+.humanSaid
+{
+	-moz-border-radius: 15px; //for mozilla support
+	-webkit-border-radius: 15px; //for chrome support
+	border-radius: 15px;
+	background:blue;
+}
 
 .AIInter
 {
@@ -188,23 +198,32 @@ textarea#HumanInter {
 
 div#AIOuterDiv
 {
-	position: fixed;
-	top: 50px;
-	left: 395px;
-	width:385px;
-	height:150px;
+  position: absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:80%;
 	z-index:1;
 	opacity:1;
 	z-index:2;
+	overflow-y: auto;
+
+
+  display: table-row;
+  vertical-align: bottom;
 }
 
 
 div#AIInnerDiv
 {
+  	position: absolute;
+	top:0px;
+	left:0px;
 	width:90%;
 	height:90%;
 	z-index:3;
 	opacity:1;
+	overflow-y:scroll;
 }
 
 
