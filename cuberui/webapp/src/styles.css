@@ -176,10 +176,21 @@ textarea#HumanInter {
 
 .humanSaid
 {
-	-moz-border-radius: 15px; //for mozilla support
-	-webkit-border-radius: 15px; //for chrome support
-	border-radius: 15px;
-	background:blue;
+  position: relative;
+  width: 80%;
+  height:auto;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  background-color: transparent;
+  border: 8px solid #666;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  -moz-box-shadow: 2px 2px 4px #888;
+  box-shadow: 2px 2px 4px #888;
+  font-size:24px;	
 }
 
 .AIInter
@@ -208,9 +219,8 @@ div#AIOuterDiv
 	z-index:2;
 	overflow-y: auto;
 
-
-  display: table-row;
-  vertical-align: bottom;
+    flex-direction: column-reverse;
+    display: flex;
 }
 
 
