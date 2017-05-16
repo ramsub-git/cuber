@@ -42,19 +42,24 @@ class HumanInteraction {
   }
 
 
-  humanSaid(message: string): string {
+  humanSaid(message: string | string[]): string {
     console.log('Human Interaction: inside remote humanSaid', message);
 
     var lInter = new app.models.Interaction();
 
     lInter.source = "Human";
-    lInter.text = message;
-
-    this.model.app.mx.IO.emit('HumanSaid', lInter, false);
+    
+    if(typeof message === 'string') {
+    	lInter.text = message.trim();
+	}
+	else {
+		lInter.text = message[0].trim();
+	}
+    this.model.app.mx.IO.emit('HumanSaid', lInter, true);
 
     console.log('after emitting machine said');
 
-    return message;
+    return lInter.text;
   }
 }
 

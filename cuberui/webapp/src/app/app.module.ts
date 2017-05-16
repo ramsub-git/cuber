@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule} from '@angular/http';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { AppComponent } from './app.component';
 import {HumanInteractionComponent} from "./human-interaction.component";
@@ -15,6 +16,7 @@ import {InteractionComponent} from "./interaction.component";
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     SDKBrowserModule.forRoot()
   ],
   providers: [],
