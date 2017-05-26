@@ -20,9 +20,14 @@ var app = require('../../server/server');
       http    : { path: '/my-remote', verb: 'get' }
     },
     humanSaid: {
-      accepts: {arg: 'text', type: 'string'},
+      accepts: [{arg: 'text', type: 'string'},{arg:'clientID', type:'string'}],
       return: {arg: 'text', type: 'string'},
       http: {path: '/humansaid', verb: 'post'}
+    },
+    onSessionStart: {
+      accepts: {arg: 'clientID', type: 'string'},
+      return: {arg: 'text', type: 'string'},
+      http: {path: '/onStart', verb: 'post'}
     }
   }
 })
@@ -42,10 +47,11 @@ class HumanInteraction {
   }
 
 
-  humanSaid(message: string | string[]): string {
+  humanSaid(message: string, clientID : string): string {
     console.log('Human Interaction: inside remote humanSaid', message);
 
     var lInter = new app.models.Interaction();
+	var lClientID = '';
 
     lInter.source = "Human";
     
@@ -53,13 +59,28 @@ class HumanInteraction {
     	lInter.text = message.trim();
 	}
 	else {
-		lInter.text = message[0].trim();
+		// lInter.text = message[0].trim();
+		// lClientID = message[1].trim();
 	}
-    this.model.app.mx.IO.emit('HumanSaid', lInter, true);
+	
+	lClientID = clientID;
+	
+	console.log('inside humanSaid ', lClientID);
+	
+    this.model.app.mx.IO.emit('HumanSaid'+lClientID, lInter, true);
 
     console.log('after emitting machine said');
 
     return lInter.text;
+  }
+
+
+  onSessionStart(clientID: string | string[]): string {
+    console.log('Human Interaction: inside onSessionStart', clientID);
+    
+    console.log('Human Interaction: exiting onSessionStart');
+
+    return "";
   }
 }
 
