@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+#AIOuterDiv.well
+{
+    overflow-y: scroll;
+    height: 300px;
+}
+
+/* 
 body {
   margin: 0;
 }
@@ -72,10 +79,10 @@ body {
   left: 0;
   text-align:center;
   display:block;
-  /* background: url('/assets/img/robot-2027195_960_720.png') center center / cover no-repeat; */
+  background: url('/assets/img/robot-2027195_960_720.png') center center / cover no-repeat;
   -webkit-background-size:contain;
   background-size:contain;
-  /* opacity: 0.05; */
+  opacity: 0.05;
   z-index: 1;
 }
 
@@ -88,10 +95,10 @@ body {
   left: 0;
   text-align:center;
   display:block;
-  /* background: url('/assets/img/robot-2027195_960_720.png') center center / cover no-repeat; */
+  background: url('/assets/img/robot-2027195_960_720.png') center center / cover no-repeat;
   -webkit-background-size:contain;
   background-size:contain;
-  /* opacity: 0.05; */
+  opacity: 0.05;
   z-index: 1;
   overflow-x:hidden;
   overflow:hidden;
@@ -331,3 +338,4 @@ div#HumanInnerDiv
     }
 }
 
+ */
