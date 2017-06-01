@@ -5,6 +5,10 @@
       "fireloop": {
         "path": "./fireloop",
         "type": "server"
+      },
+      "webapp": {
+        "path": "./webapp",
+        "type": "ng2web"
       }
     }
   }
