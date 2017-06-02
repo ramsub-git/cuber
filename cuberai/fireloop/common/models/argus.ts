@@ -15,7 +15,7 @@ import { Model } from '@mean-expert/model';
       returns : { arg: 'result', type: 'array' },
       http    : { path: '/my-remote', verb: 'get' }
     },
-    create: {
+    createChannel: {
       accepts: [{arg: 'channels', type: 'string'},{arg:'clientID', type:'string'}],
       return: {arg: 'channelID', type: 'string'},
       http: {path: '/create', verb: 'post'}
@@ -37,7 +37,7 @@ class argus {
     this.model.find(next);
   }
         
-  create(channels: string[], clientID : string): string {
+  createChannel(channels: string[], clientID : string): string {
     console.log('entering argus.create', channels);
 
     /*
