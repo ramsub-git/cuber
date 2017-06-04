@@ -1,5 +1,7 @@
 import {Model} from "@mean-expert/model";
 
+import {ArgusApi} from '../../server/cuberai/api';
+
 var app = require('../../server/server');
 
 
@@ -77,6 +79,12 @@ class HumanInteraction {
 
   onSessionStart(clientID: string | string[]): string {
     console.log('Human Interaction: inside onSessionStart', clientID);
+    
+    
+    // Now, lets try to create an Argus Channel
+    let channels : string = '{"text":["human"],"event":["chat"]}';
+    let cuberAPI : ArgusApi = new ArgusApi('http://localhost:9500/api');
+    cuberAPI.argusCreateChannel(<string>channels,<string>clientID);
     
     console.log('Human Interaction: exiting onSessionStart');
 

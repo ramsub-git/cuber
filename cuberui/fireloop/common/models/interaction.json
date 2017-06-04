@@ -5,6 +5,23 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "required": false
+    },
+    "Stats": [
+      {
+        "method": "stats",
+        "endpoint": "/stats",
+        "description": "Statistical information for Interaction registers.",
+        "type": "model",
+        "count": {
+          "on": "createdAt",
+          "by": "index"
+        }
+      }
+    ]
+  },
   "properties": {
     "source": {
       "type": "string",
@@ -22,22 +39,5 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {},
-  "mixins": {
-    "TimeStamp": {
-      "required": false
-    },
-    "Stats": [
-      {
-        "method": "stats",
-        "endpoint": "/stats",
-        "description": "Statistical information for Interaction registers.",
-        "type": "model",
-        "count": {
-          "on": "createdAt",
-          "by": "index"
-        }
-      }
-    ]
-  }
+  "methods": {}
 }

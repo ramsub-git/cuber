@@ -2,5 +2,11 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "cuberai": {
+    "name": "cuberai",
+    "baseURL": "http://0.0.0.0:9500",
+    "crud": true,
+    "connector": "rest"
   }
 }

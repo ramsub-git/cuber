@@ -1,14 +1,9 @@
-<div id="AIOuterDiv" class="Inter AI Outer" angular2-auto-scroll lock-y-offset="10" observe-attributes>
+<div id="AIOuterDiv" class="well well-lg">
 
-  <!-- <div id="AIInnerDiv" class="Inter AI Inner"> -->
 
   <div *ngFor="let _inter of this.inters| async">
   	<div class="humanSaid">
    		<span>{{_inter.text}}</span>
   	</div>
   </div>
-  <!-- </div> -->
-
-  <a id='bottom' style='position:absolute;bottom:0;top=0'></a>  
-
 </div>
