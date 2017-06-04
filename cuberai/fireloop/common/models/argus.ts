@@ -8,17 +8,12 @@ import { Model } from '@mean-expert/model';
  **/
 @Model({
   hooks: {
-    beforeSave: { name: 'before save', type: 'operation' }
   },
   remotes: {
-    myRemote: {
-      returns : { arg: 'result', type: 'array' },
-      http    : { path: '/my-remote', verb: 'get' }
-    },
     createChannel: {
       accepts: [{arg: 'channels', type: 'string'},{arg:'clientID', type:'string'}],
       return: {arg: 'channelID', type: 'string'},
-      http: {path: '/create', verb: 'post'}
+      http: {path: '/createChannel', verb: 'post'}
     }
   }
 })
@@ -27,16 +22,6 @@ class argus {
   // LoopBack model instance is injected in constructor
   constructor(public model: any) {}
 
-  // Example Operation Hook
-  beforeSave(ctx: any, next: Function): void {
-    console.log('argus: Before Save');
-    next();
-  }
-  // Example Remote Method
-  myRemote(next: Function): void {
-    this.model.find(next);
-  }
-        
   createChannel(channels: string[], clientID : string): string {
     console.log('entering argus.create', channels);
 

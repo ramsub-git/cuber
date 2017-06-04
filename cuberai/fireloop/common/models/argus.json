@@ -13,18 +13,6 @@
   "mixins": {
     "TimeStamp": {
       "required": false
-    },
-    "Stats": [
-      {
-        "method": "stats",
-        "endpoint": "/stats",
-        "description": "Statistical information for argus registers.",
-        "type": "model",
-        "count": {
-          "on": "createdAt",
-          "by": "index"
-        }
-      }
-    ]
+    }
   }
 }
