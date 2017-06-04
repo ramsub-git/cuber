@@ -50,6 +50,14 @@ class argus {
       }
      */
     
+    
+    console.log('inside cuberai before subscribe to human said - ', 'HumanSaid'+clientID)
+    this.model.app.mx.IO.on('HumanSaid'+clientID, function(message: string) {
+      console.log('entering inside cuber HumanSaid', message);
+      console.log('leaving inside cuber HumanSaid', message);
+    });
+    
+    
     console.log('exiting argus.create');
 
     return '';

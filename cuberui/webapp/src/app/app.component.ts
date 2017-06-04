@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RealTime} from "./shared/sdk/services";
 
 @Component({
   selector: 'app-root',
