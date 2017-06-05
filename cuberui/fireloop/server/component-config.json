@@ -4,7 +4,7 @@
   },
   "@mean-expert/loopback-component-realtime": {
     "auth": false,
-    "debug": false,
+    "debug": true,
     "driver": {
       "name": "socket.io"
     },

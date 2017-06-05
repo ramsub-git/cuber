@@ -22,6 +22,18 @@ app.start = function() {
   return server;
 };
 
+app.channelSub = function(clientID, channelID) {
+		console.log('inside channelSub', clientID);
+	    app.mx.IO.on('test', function (message) {
+	      console.log('MESSAGE: ', message);
+	    });
+		app.mx.IO.emit('test', 'Hello World');
+    	app.mx.IO.on('HumanSaid'+clientID, function(message) {
+    		console.log('entering inside cuber HumanSaid', message);
+    		console.log('leaving inside cuber HumanSaid', message);
+      });
+};
+
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {

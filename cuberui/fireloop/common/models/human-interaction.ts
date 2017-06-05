@@ -70,6 +70,7 @@ class HumanInteraction {
 	console.log('inside humanSaid ', lClientID);
 	
     this.model.app.mx.IO.emit('HumanSaid'+lClientID, lInter, true);
+	this.model.app.mx.PubSub.publish({"method":'test', "endpoint":'http://localhost:9500', "data": 'Hello World2'}, (() => {console.log('inside next of pubsub');}));
 
     console.log('after emitting machine said');
 
